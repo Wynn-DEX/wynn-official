@@ -40,27 +40,29 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
+      display: flex;
       align-items: center;
+      justify-content: center;
       padding: 0 3rem;
       height: 64px;
       background: rgba(0,0,0,0.88);
       backdrop-filter: blur(16px);
       border-bottom: 1px solid rgba(0,255,65,0.2);
+      gap: 2rem;
     }
 
     .nav-left {
       display: flex;
-      gap: 2rem;
+      gap: 1.5rem;
       align-items: center;
+      justify-content: flex-end;
     }
 
     .nav-right {
       display: flex;
-      gap: 2rem;
+      gap: 1.5rem;
       align-items: center;
-      justify-content: flex-end;
+      justify-content: flex-start;
     }
 
     .nav-logo {
@@ -72,6 +74,7 @@
       text-shadow: 0 0 20px #00ff41;
       text-decoration: none;
       text-transform: uppercase;
+      white-space: nowrap;
     }
 
     .nav-logo span { color: #ffffff; }
@@ -85,6 +88,7 @@
       position: relative;
       padding-bottom: 4px;
       transition: color 0.3s ease, text-shadow 0.3s ease;
+      white-space: nowrap;
     }
 
     .nav-link::after {
