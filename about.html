@@ -108,21 +108,26 @@
 
     .nav-link:hover::after { width: 100%; }
 
-    /* PAGE */
-    .about {
+    /* HERO */
+    .about-hero {
       position: relative;
       z-index: 10;
-      max-width: 900px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 10rem 5rem 8rem;
+      padding: 10rem 5rem 4rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 4rem;
+      align-items: start;
     }
+
+    .about-hero-left { display: flex; flex-direction: column; gap: 1.2rem; }
 
     .about-kicker {
       font-size: 0.78rem;
       letter-spacing: 0.3em;
       color: #ffffff;
       text-transform: uppercase;
-      margin-bottom: 1.5rem;
     }
 
     .about-title {
@@ -131,7 +136,6 @@
       font-weight: 900;
       color: #ffffff;
       white-space: nowrap;
-      margin-bottom: 0.5rem;
     }
 
     .about-subtitle {
@@ -139,22 +143,38 @@
       letter-spacing: 0.2em;
       color: #00ff41;
       text-transform: uppercase;
-      margin-bottom: 3rem;
     }
 
-    .about-image {
+    .about-intro {
+      font-size: 14px;
+      line-height: 1.9;
+      color: #ffffff;
+      max-width: 560px;
+    }
+
+    .about-hero-right {
       display: flex;
-      justify-content: center;
-      margin-bottom: 3rem;
+      justify-content: flex-end;
+      align-items: flex-start;
+      padding-top: 2rem;
     }
 
-    .about-image img {
+    .about-hero-right img {
       width: 300px;
       height: 300px;
       object-fit: cover;
       object-position: top;
       border: 1px solid rgba(0,255,65,0.2);
       clip-path: polygon(0 0,calc(100% - 30px) 0,100% 30px,100% 100%,30px 100%,0 calc(100% - 30px));
+    }
+
+    /* STATS */
+    .about {
+      position: relative;
+      z-index: 10;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 5rem 4rem;
     }
 
     .about-stats {
@@ -431,16 +451,23 @@
     </div>
   </nav>
 
-  <!-- ABOUT -->
-  <section class="about">
-    <div class="about-kicker">// About</div>
-    <h1 class="about-title">JAMES <span style="color:#ffffff;">WYNN</span></h1>
-    <div class="about-subtitle">Founder, CEO & Notorious Trader</div>
-
-    <div class="about-image">
+  <!-- HERO -->
+  <div class="about-hero">
+    <div class="about-hero-left">
+      <div class="about-kicker">// About</div>
+      <h1 class="about-title">JAMES <span style="color:#ffffff;">WYNN</span></h1>
+      <div class="about-subtitle">Founder, CEO & Notorious Trader</div>
+      <p class="about-intro">
+        James Wynn is a notorious high-stakes crypto trader, globally recognized for turning conviction, timing, and calculated aggression into some of the most talked-about trades in crypto history. In just 70 days, Wynn harnessed the power of leverage to transform a relatively small amount of capital into a staggering <strong style="color:#00ff41;">$87,000,000</strong>. During this period James Wynn executed the largest ever publicly traded <strong style="color:#00ff41;">$BTC</strong> long of <strong style="color:#00ff41;">$1.26 billion dollars</strong> on the on-chain trading platform HyperLiquid.
+      </p>
+    </div>
+    <div class="about-hero-right">
       <img src="https://raw.githubusercontent.com/Wynn-DEX/wynndex-official/main/public/wynn-avatar.jpeg" alt="James Wynn" />
     </div>
+  </div>
 
+  <!-- STATS -->
+  <div class="about">
     <div class="about-stats">
       <div class="stat-card">
         <div class="stat-value">$1.26B</div>
@@ -459,7 +486,7 @@
         <div class="stat-label">Most Talked-About Crypto Trader</div>
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- CAROUSEL -->
   <div class="carousel-section">
@@ -467,44 +494,6 @@
     <div class="carousel-title">THE RECEIPTS</div>
     <div class="carousel-track-wrapper">
       <div class="carousel-track" id="carousel-track">
-
-        <!-- SLOT 1 — replace src with your image URL -->
-        <div class="carousel-item" onclick="openLightbox('/images/proof-1.jpg')">
-          <img src="/images/proof-1.jpg" alt="Proof 1" onerror="this.style.background='rgba(0,255,65,0.05)';this.style.display='block'" />
-          <div class="carousel-item-label">$BTC Long — $1.26B</div>
-        </div>
-
-        <!-- SLOT 2 -->
-        <div class="carousel-item" onclick="openLightbox('/images/proof-2.jpg')">
-          <img src="/images/proof-2.jpg" alt="Proof 2" onerror="this.style.background='rgba(0,255,65,0.05)'" />
-          <div class="carousel-item-label">$87M PnL — 70 Days</div>
-        </div>
-
-        <!-- SLOT 3 -->
-        <div class="carousel-item" onclick="openLightbox('/images/proof-3.jpg')">
-          <img src="/images/proof-3.jpg" alt="Proof 3" onerror="this.style.background='rgba(0,255,65,0.05)'" />
-          <div class="carousel-item-label">$PEPE — $600k Market Cap Call</div>
-        </div>
-
-        <!-- SLOT 4 -->
-        <div class="carousel-item" onclick="openLightbox('/images/proof-4.jpg')">
-          <img src="/images/proof-4.jpg" alt="Proof 4" onerror="this.style.background='rgba(0,255,65,0.05)'" />
-          <div class="carousel-item-label">$25M+ Meme Coin Profits</div>
-        </div>
-
-        <!-- SLOT 5 -->
-        <div class="carousel-item" onclick="openLightbox('/images/proof-5.jpg')">
-          <img src="/images/proof-5.jpg" alt="Proof 5" onerror="this.style.background='rgba(0,255,65,0.05)'" />
-          <div class="carousel-item-label">HyperLiquid Position</div>
-        </div>
-
-        <!-- SLOT 6 -->
-        <div class="carousel-item" onclick="openLightbox('/images/proof-6.jpg')">
-          <img src="/images/proof-6.jpg" alt="Proof 6" onerror="this.style.background='rgba(0,255,65,0.05)'" />
-          <div class="carousel-item-label">Trade History</div>
-        </div>
-
-        <!-- DUPLICATES for seamless loop -->
         <div class="carousel-item" onclick="openLightbox('/images/proof-1.jpg')">
           <img src="/images/proof-1.jpg" alt="Proof 1" />
           <div class="carousel-item-label">$BTC Long — $1.26B</div>
@@ -529,7 +518,31 @@
           <img src="/images/proof-6.jpg" alt="Proof 6" />
           <div class="carousel-item-label">Trade History</div>
         </div>
-
+        <!-- Duplicates for seamless loop -->
+        <div class="carousel-item" onclick="openLightbox('/images/proof-1.jpg')">
+          <img src="/images/proof-1.jpg" alt="Proof 1" />
+          <div class="carousel-item-label">$BTC Long — $1.26B</div>
+        </div>
+        <div class="carousel-item" onclick="openLightbox('/images/proof-2.jpg')">
+          <img src="/images/proof-2.jpg" alt="Proof 2" />
+          <div class="carousel-item-label">$87M PnL — 70 Days</div>
+        </div>
+        <div class="carousel-item" onclick="openLightbox('/images/proof-3.jpg')">
+          <img src="/images/proof-3.jpg" alt="Proof 3" />
+          <div class="carousel-item-label">$PEPE — $600k Market Cap Call</div>
+        </div>
+        <div class="carousel-item" onclick="openLightbox('/images/proof-4.jpg')">
+          <img src="/images/proof-4.jpg" alt="Proof 4" />
+          <div class="carousel-item-label">$25M+ Meme Coin Profits</div>
+        </div>
+        <div class="carousel-item" onclick="openLightbox('/images/proof-5.jpg')">
+          <img src="/images/proof-5.jpg" alt="Proof 5" />
+          <div class="carousel-item-label">HyperLiquid Position</div>
+        </div>
+        <div class="carousel-item" onclick="openLightbox('/images/proof-6.jpg')">
+          <img src="/images/proof-6.jpg" alt="Proof 6" />
+          <div class="carousel-item-label">Trade History</div>
+        </div>
       </div>
     </div>
   </div>
@@ -537,9 +550,6 @@
   <!-- ABOUT BODY -->
   <section class="about" style="padding-top:0;">
     <div class="about-body">
-
-      <div class="about-section-title">// The Trader</div>
-      <p>James Wynn is a notorious high-stakes crypto trader, globally recognized for turning conviction, timing, and calculated aggression into some of the most talked-about trades in crypto history. In just 70 days, Wynn harnessed the power of leverage to transform a relatively small amount of capital into a staggering <strong style="color:#00ff41;">$87,000,000</strong>. During this period James Wynn executed the largest ever publicly traded <strong style="color:#00ff41;">$BTC</strong> long of <strong style="color:#00ff41;">$1.26 billion dollars</strong> on the on-chain trading platform HyperLiquid.</p>
 
       <div class="about-section-title">// The Origin</div>
       <p>But his story began long before that.</p>
@@ -568,7 +578,6 @@
   </footer>
 
   <script>
-    // Matrix
     const canvas = document.getElementById('matrix');
     const ctx = canvas.getContext('2d');
     const chars = 'アイウエオカキクケコ0123456789WYNNDEX$₿ABCDEF';
@@ -597,7 +606,6 @@
     window.addEventListener('resize', init);
     setInterval(draw, 80);
 
-    // Lightbox
     function openLightbox(src) {
       document.getElementById('lightbox-img').src = src;
       document.getElementById('lightbox').classList.add('active');
